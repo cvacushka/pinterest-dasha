@@ -51,19 +51,19 @@ jobs:
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
-
+      
       - name: Build and push Frontend Docker Image
-        uses: docker/build-push-action@v4
+        uses: docker/build-push-action@v6
         with:
           context: ./frontend
           file: ./frontend/Dockerfile
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }} frontend
-
-      - name: Build and push Backend Docker Image
-        uses: docker/build-push-action@v4
+          tags: dari837/frontend:latest
+      
+      - name:  Build and push Backend Docker Image
+        uses: docker/build-push-action@v6
         with:
           context: ./backend
           file: ./backend/Dockerfile
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }} backend
+          tags: dari837/backend:latest
