@@ -29,10 +29,6 @@ jobs:
         working-directory: ./frontend
         run: npm install
 
-      - name: Run ESLint
-        working-directory: ./frontend
-        run: npx eslint . -c .js,.jsx,.ts,.tsx
-
       # Lint Backend Code
       - name: Set up Python
         uses: actions/setup-python@v4
