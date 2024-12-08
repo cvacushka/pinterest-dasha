@@ -32,7 +32,7 @@ const popupClosest = document.querySelectorAll('.popup');                       
 const cardTemplate = document.querySelector('.template-card').content;                     // Найти шаблон карточки для добавления
 const cardsContainer = document.querySelector('.elements');                                // Найти раздел, куда будут добавлятся карточки
 
-const cardsApiUrl = 'http://127.0.0.1:8000/api/cards/';
+const cardsApiUrl = 'http://backend-service/api/cards/';
 
 /** Функция лайк-дизлайка карточки */
 const bindCardLikeEventListener = (buttonLike) => {
