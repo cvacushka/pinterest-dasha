@@ -41,9 +41,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
           pip install ruff
-      - name: asd backend dependencies
-        run: |
-          echo ${{ secrets.DOCKER_USERNAME }}
+          
       - name: Run Ruff
         working-directory: ./backend
         run: ruff check
@@ -60,7 +58,7 @@ jobs:
           context: ./frontend
           file: ./frontend/Dockerfile
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/frontend:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/frontend
 
       - name: Build and push Backend Docker Image
         uses: docker/build-push-action@v4
@@ -68,4 +66,4 @@ jobs:
           context: ./backend
           file: ./backend/Dockerfile
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/backend:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/backend
